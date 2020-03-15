@@ -8,7 +8,7 @@
 @Version        :1.0
 '''
 
-from robot1 import Robot
+from robot import Robot
 from matplotlib import pyplot as plt
 import math
 
@@ -29,7 +29,7 @@ def run(param1,param2,param3):
         diff_crosstalk_error = myrobot.y - crosstrack_error
         crosstrack_error = myrobot.y
         int_crosstalk_error += crosstrack_error
-        steering = -crosstrack_error * param1 - param2 * diff_crosstalk_error / delta_t -param3 * int_crosstalk_error
+        steering = - param1 * crosstrack_error - param2 * diff_crosstalk_error / delta_t -param3 * int_crosstalk_error
         myrobot.move(steering, speed)
         y.append(myrobot.y)
         print(myrobot, "steering =", steering)
@@ -38,3 +38,4 @@ def run(param1,param2,param3):
 run(2.195279127584432, 8.71639967501516, 0.24370616448808052)
 plt.plot(y)
 plt.show()
+

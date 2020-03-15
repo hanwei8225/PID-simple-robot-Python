@@ -8,7 +8,7 @@
 @Version        :1.0
 '''
 
-from robot1 import Robot
+from robot import Robot
 from matplotlib import pyplot as plt
 import math
 
