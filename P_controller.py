@@ -28,6 +28,6 @@ def run(param):
         print(myrobot, "steering =", steering)
 
 
-run(0.1)
+run(0.05)
 plt.plot(y)
 plt.show()
